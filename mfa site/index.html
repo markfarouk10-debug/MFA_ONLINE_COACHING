@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Coaching | Online Fitness & Nutrition</title>
+    <!-- استيراد خط عربي فخم -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
+            --orange-neon: #ff6b00;
+            --blue-neon: #00d2ff;
+            --text-color: #ffffff;
+            --text-gray: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر / البانر الرئيسي */
+        header {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.95)), url('Gemini_Generated_Image.jpeg') no-repeat center center/cover;
+            border-bottom: 3px solid var(--orange-neon);
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-content img.logo {
+            width: 150px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.5));
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--blue-neon), var(--orange-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 12px 35px;
+            background: linear-gradient(45deg, var(--orange-neon), #ff8c00);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+            transition: 0.3s ease;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.8);
+        }
+
+        /* شريط الإنجازات */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: -40px auto 40px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            border: 2px solid var(--blue-neon);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
+        }
+
+        .stat-box h3 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--orange-neon);
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            color: var(--text-gray);
+            font-weight: 700;
+        }
+
+        /* الأقسام العامة */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            text-transform: uppercase;
+        }
+
+        .section-title span {
+            color: var(--orange-neon);
+        }
+
+        /* قسم الكلام الطويل */
+        .long-story-box {
+            background: var(--card-bg);
+            border: 2px solid #1e293b;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .long-story-box p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .long-story-box p strong {
+            color: var(--text-color);
+        }
+
+        /* قسم الباقات */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: var(--card-bg);
+            border: 2px solid #1e293b;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .package-card:hover {
+            border-color: var(--blue-neon);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 210, 255, 0.2);
+        }
+
+        .package-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: #07090f;
+            border: 1px solid var(--orange-neon);
+        }
+
+        .package-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--orange-neon);
+            margin-bottom: 15px;
+        }
+
+        .package-desc {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        /* قسم الضمان والتحدي */
+        .guarantee-section {
+            background: linear-gradient(135deg, #131b2e, #07090f);
+            border: 2px solid var(--orange-neon);
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
+        }
+
+        .guarantee-content img {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 2px solid var(--blue-neon);
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+        }
+
+        .guarantee-content h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--orange-neon);
+            margin-bottom: 10px;
+        }
+
+        .guarantee-content p {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        /* قسم وسائل التواصل الاجتماعي */
+        .social-section {
+            background: var(--card-bg);
+            border: 2px solid var(--blue-neon);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
+        }
+
+        .social-section h3 {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #0b0f19;
+            color: var(--text-color);
+            border: 2px solid var(--orange-neon);
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--orange-neon);
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #07090f;
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid #1e293b;
+            color: var(--text-gray);
+            margin-top: 40px;
+        }
+
+        .footer-logo {
+            width: 130px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.5));
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر والبانر -->
+    <header>
+        <div class="hero-content">
+            <img src="Gemini_Generated_Image__1_-removebg-preview.png" alt="MFA Logo" class="logo">
+            <h1>MFA COACHING</h1>
+            <p>طريقك لتحويل جسمك، حرق الدهون، وبناء العضلات مع خطط تدريب وتغذية مخصصة ليك بالكامل.</p>
+            <a href="#packages" class="btn-main">احجز باقتك الآن</a>
+        </div>
+    </header>
+
+    <!-- شريط الإنجازات -->
+    <div class="stats-bar">
+        <div class="stat-box">
+            <h3>+100</h3>
+            <p>كلاينت تم تحويل جسمهم</p>
+        </div>
+        <div class="stat-box">
+            <h3>86%</h3>
+            <p>Success Rate (نسبة النجاح)</p>
+        </div>
+        <div class="stat-box">
+            <h3>سنة كاملة</h3>
+            <p>من الخبرة والاحتراف في التدريب</p>
+        </div>
+    </div>
+
+    <!-- قسم الكلام الطويل -->
+    <section>
+        <div class="long-story-box">
+            <h2 class="section-title" style="margin-bottom: 20px;">ليه تختار <span>MFA Coaching</span>؟</h2>
+            <p>أهلاً بك يا بطل في العالم الحقيقي للبطولة وصناعة الأجسام. الشغل هنا مش مجرد تمرينة بنلعبها وخلاص أو نظام غذائي مؤقت هتمشي عليه أسبوعين وتزهق، لا! هنا في <strong>MFA Coaching</strong> احنا بنبنّي أسلوب حياة متكامل ومستدام. بنهتم بكل تفصيلة صغيرة وكبيرة في يومك؛ من أول سعراتك الحرارية وتوزيع الماكروز (Macros) بما يتناسب مع ظروفك وميزانيتك، لحد جدول التمرين اللي مصمم خصيصاً عشان يضرب العضلة في مقتل وجيب أقصى استفادة.</p>
+            <p>طوال فترة خبرتنا اللي تخطت سنة من العمل الشاق والمستمر، قدرنا نغير حياة وفورمة أكثر من <strong>100 كلاینت</strong> من مختلف المستويات والظروف. هدفنا الأول والأخير هو إننا نطلع "الوحش" اللي جواك ونوصلك للهدف اللي تتمناه، سواء كنت عايز تنشف دهون وتظهر التفتيحات والتقاسيم، أو تبني كتلة عضلية صافية وقوية. معناش مستحيل، ومعناش أعذار... الطريق قدامك واضح، وكل اللي محتاجينه منك هو الالتزام الكامل، وسيب الباقي علينا!</p>
+        </div>
+    </section>
+
+    <!-- قسم الباقات -->
+    <section id="packages">
+        <h2 class="section-title">باقات <span>الـ Coaching</span></h2>
+        <div class="packages-grid">
+            
+            <!-- الباقة الأولى: Low Budget -->
+            <div class="package-card">
+                <img src="61a815ae-2c95-4afe-9724-fdf20e5ae991.jpg" alt="Low Budget">
+                <h3>COACH LOW BUDGET</h3>
+                <div class="package-price">600 EGP <span style="font-size: 1rem; color: var(--text-gray);">/ 3 months</span></div>
+                <p class="package-desc">في متابعة معايا بعمل لك خطة وبشرحها لك وبتمشي عليها ثلاث شهور لوحدك.</p>
+                <a href="https://wa.me/201501555078" target="_blank" class="btn-main" style="padding: 8px 20px; font-size: 0.9rem;">(START COACH LOW BUDGET)</a>
+            </div>
+
+            <!-- الباقة الثانية: Gorilla Mid Budget -->
+            <div class="package-card">
+                <img src="Gemini_Generated_Image (2).jpeg" alt="Gorilla Mid Budget">
+                <h3>GORILLA MID BUDGET</h3>
+                <div class="package-price">1000 EGP <span style="font-size: 1rem; color: var(--text-gray);">/ 3 months</span></div>
+                <p class="package-desc">في متابعة معايا بعمل لك خطة وبشرحها لك وبتتغير كل اسبوع حسب تطورك.</p>
+                <a href="https://wa.me/201501555078" target="_blank" class="btn-main" style="padding: 8px 20px; font-size: 0.9rem;">(START GORILLA MID BUDGET)</a>
+            </div>
+
+            <!-- الباقة الثالثة: VIP Monster -->
+            <div class="package-card">
+                <img src="e5e52780-38ca-4c89-8b93-c083e18a3f5f.jpg" alt="VIP Monster">
+                <h3>VIP BUDGET (MONSTER)</h3>
+                <div class="package-price">1500 EGP <span style="font-size: 1rem; color: var(--text-gray);">/ 3 months</span></div>
+                <p class="package-desc">باقة النخبة (النوحش) بمتابعة يومية مكثفة ومكالمات هاتفية لتعديل الخطة.</p>
+                <a href="https://wa.me/201501555078" target="_blank" class="btn-main" style="padding: 8px 20px; font-size: 0.9rem;">(START VIP MONSTER)</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم الضمان والتحدي -->
+    <section>
+        <div class="guarantee-section">
+            <div class="guarantee-content">
+                <img src="cf00fe10-1197-4bae-85f1-a76794701edb.jpg" alt="Coach Guarantee">
+                <h3>الخطه فشلت ؟</h3>
+                <p>خد فلوسك فوقتها 😏🔥</p>
+            </div>
+        </div>
+
+        <!-- قسم وسائل التواصل الاجتماعي -->
+        <div class="social-section">
+            <h3>تواصل مع الكوتش مباشرة</h3>
+            <div class="social-links">
+                <a href="https://wa.me/201501555078" target="_blank" class="social-btn">💬 واتساب</a>
+                <a href="https://www.instagram.com/mark_online_coach?cplk=YTRzeTBpN2g4NXps" target="_blank" class="social-btn">📸 إنستجرام</a>
+                <a href="https://tiktok.com/@el_powerlifter" target="_blank" class="social-btn">🎬 تيك توك</a>
+                <a href="https://www.facebook.com/share/1MhKFNhdCH/" target="_blank" class="social-btn">👥 فيسبوك</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <img src="Gemini_Generated_Image__1_-removebg-preview.png" alt="MFA Logo" class="footer-logo">
+        <p>&copy; 2026 MFA Coaching. All Rights Reserved.</p>
+        <p>Online Fitness & Nutrition by Twin Turbo ⚡</p>
+    </footer>
+
+</body>
+</html>
